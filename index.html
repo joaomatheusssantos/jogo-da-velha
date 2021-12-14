@@ -73,7 +73,7 @@
     
     let jogador1, jogador2;
     let jogadorAtual;
-    let formas = ['X', 'O'];
+    let formas = ['X¹', 'O²'];
     let index = null;
     let tabuleiro = new Array(9);
 
@@ -120,11 +120,11 @@
 
     allElementsInSomeColumn = function() {
         for( let i = 0; i < 3; i++) {
-            if ( tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X' ) { 
+            if ( tabuleiro[i] == 'X¹' && tabuleiro[i + 3] == 'X¹' && tabuleiro[i + 6] == 'X¹' ) { 
                 alert (jogador1.nome + ' Venceu!');
                 reset();
             }
-            if ( tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O' ) {
+            if ( tabuleiro[i] == 'O²' && tabuleiro[i + 3] == 'O²' && tabuleiro[i + 6] == 'O²' ) {
                 alert (jogador2.nome + ' Venceu!');
                 reset();
             }
@@ -133,12 +133,12 @@
     }
 
     allElementsInSomeDiagonal = function() {
-        if ( (tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') ||
-                (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')) {
+        if ( (tabuleiro[0] == 'X¹' && tabuleiro[4] == 'X¹' && tabuleiro[8] == 'X¹') ||
+                (tabuleiro[2] == 'X¹' && tabuleiro[4] == 'X¹' && tabuleiro[6] == 'X¹')) {
                 alert (jogador1.nome + ' Venceu!');
             reset();
-        } else if ( (tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') ||
-                    (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O') ) {
+        } else if ( (tabuleiro[0] == 'O²' && tabuleiro[4] == 'O²' && tabuleiro[8] == 'O²') ||
+                    (tabuleiro[2] == 'O²' && tabuleiro[4] == 'O²' && tabuleiro[6] == 'O²') ) {
                 alert (jogador2.nome + ' Venceu!');
             reset();
         } 
