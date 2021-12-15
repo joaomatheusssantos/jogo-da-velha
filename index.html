@@ -73,9 +73,10 @@
     
     let jogador1, jogador2;
     let jogadorAtual;
-    let formas = ['X¹', 'O²'];
+    let formas = ['&#9733;', '&#9734;'];
     let index = null;
     let tabuleiro = new Array(9);
+    
 
 
     initGame = function() {
@@ -91,11 +92,15 @@
         
     }
 
+
     reset = function() { window.location.reload(); }
     
     setLabelJogadorAtual = function() {
-        document.getElementById('jogadorAtual').innerHTML = 'Jogador atual:  ' + jogadorAtual.nome;
+        document.getElementById('jogadorAtual').innerHTML = 'Jogador atual:   ' + jogadorAtual.nome;
     }
+    setLabelJogadorAtual = function() {
+			document.getElementById('jogadorAtual').innerHTML = 'Jogador atual:  ' + jogadorAtual.nome;
+		}
 
     tabuleiroIsFilled = function() {
         let preenchidos = 0;
@@ -107,11 +112,11 @@
 
     allElementsInSomeLine = function() {
         for( let i = 0; i < 7; i += 3) {
-            if ( tabuleiro[i] == jogador1.nome && tabuleiro[i + 1] == jogador1.nome && tabuleiro[i + 2] == jogador1.nome ) { 
+            if ( tabuleiro[i] == '&#9733;' && tabuleiro[i + 1] == '&#9733;' && tabuleiro[i + 2] == '&#9733;' ) { 
                 alert (jogador1.nome + ' Venceu!');
                 reset();
             }
-            if ( tabuleiro[i] == jogador2.nome && tabuleiro[i + 1] == jogador2.nome && tabuleiro[i + 2] == jogador.nome ) {
+            if ( tabuleiro[i] == '&#9734;' && tabuleiro[i + 1] == '&#9734;' && tabuleiro[i + 2] == '&#9734;' ) {
                 alert (jogador2.nome + ' Venceu!');
                 reset();
             }
@@ -120,11 +125,11 @@
 
     allElementsInSomeColumn = function() {
         for( let i = 0; i < 3; i++) {
-            if ( tabuleiro[i] == 'X¹' && tabuleiro[i + 3] == 'X¹' && tabuleiro[i + 6] == 'X¹' ) { 
+            if ( tabuleiro[i] == '&#9733;' && tabuleiro[i + 3] == '&#9733;' && tabuleiro[i + 6] == '&#9733;' ) { 
                 alert (jogador1.nome + ' Venceu!');
                 reset();
             }
-            if ( tabuleiro[i] == 'O²' && tabuleiro[i + 3] == 'O²' && tabuleiro[i + 6] == 'O²' ) {
+            if ( tabuleiro[i] == '&#9734;' && tabuleiro[i + 3] == '&#9734;' && tabuleiro[i + 6] == '&#9734;' ) {
                 alert (jogador2.nome + ' Venceu!');
                 reset();
             }
@@ -133,12 +138,12 @@
     }
 
     allElementsInSomeDiagonal = function() {
-        if ( (tabuleiro[0] == 'X¹' && tabuleiro[4] == 'X¹' && tabuleiro[8] == 'X¹') ||
-                (tabuleiro[2] == 'X¹' && tabuleiro[4] == 'X¹' && tabuleiro[6] == 'X¹')) {
+        if ( (tabuleiro[0] == '&#9733;' && tabuleiro[4] == '&#9733;' && tabuleiro[8] == '&#9733;') ||
+                (tabuleiro[2] == '&#9733;' && tabuleiro[4] == '&#9733;' && tabuleiro[6] == '&#9733;')) {
                 alert (jogador1.nome + ' Venceu!');
             reset();
-        } else if ( (tabuleiro[0] == 'O²' && tabuleiro[4] == 'O²' && tabuleiro[8] == 'O²') ||
-                    (tabuleiro[2] == 'O²' && tabuleiro[4] == 'O²' && tabuleiro[6] == 'O²') ) {
+        } else if ( (tabuleiro[0] == '&#9734;' && tabuleiro[4] == '&#9734;' && tabuleiro[8] == '&#9734;') ||
+                    (tabuleiro[2] == '&#9734;' && tabuleiro[4] == '&#9734;' && tabuleiro[6] == '&#9734;') ) {
                 alert (jogador2.nome + ' Venceu!');
             reset();
         } 
@@ -153,6 +158,7 @@
                 setLabelJogadorAtual();
 
             } else alert('Não pode, tente outra tecla!');
+    
 
             allElementsInSomeLine();
             allElementsInSomeColumn();
