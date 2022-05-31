@@ -112,11 +112,11 @@
 
     allElementsInSomeLine = function() {
         for( let i = 0; i < 7; i += 3) {
-            if ( tabuleiro[i] == '&#9733;' && tabuleiro[i + 1] == '&#9733;' && tabuleiro[i + 2] == '&#9733;' ) { 
+            if ( tabuleiro[i] == '&#9733;' && tabuleiro[i + 1] == jogadorAtual.nome && tabuleiro[i + 2] == jogadorAtual.nome ) { 
                 alert (jogador1.nome + ' Venceu!');
                 reset();
             }
-            if ( tabuleiro[i] == '&#9734;' && tabuleiro[i + 1] == '&#9734;' && tabuleiro[i + 2] == '&#9734;' ) {
+            if ( tabuleiro[i] == '&#9734;' && tabuleiro[i + 1] == jogadorAtual.nome && tabuleiro[i + 2] == jogadorAtual.nome ) {
                 alert (jogador2.nome + ' Venceu!');
                 reset();
             }
@@ -125,11 +125,11 @@
 
     allElementsInSomeColumn = function() {
         for( let i = 0; i < 3; i++) {
-            if ( tabuleiro[i] == '&#9733;' && tabuleiro[i + 3] == '&#9733;' && tabuleiro[i + 6] == '&#9733;' ) { 
+            if ( tabuleiro[i] == '&#9733;' && tabuleiro[i + 3] == jogadorAtual.nome && tabuleiro[i + 6] == jogadorAtual.nome ) { 
                 alert (jogador1.nome + ' Venceu!');
                 reset();
             }
-            if ( tabuleiro[i] == '&#9734;' && tabuleiro[i + 3] == '&#9734;' && tabuleiro[i + 6] == '&#9734;' ) {
+            if ( tabuleiro[i] == '&#9734;' && tabuleiro[i + 3] == jogadorAtual.nome && tabuleiro[i + 6] == jogadorAtual.nome ) {
                 alert (jogador2.nome + ' Venceu!');
                 reset();
             }
@@ -138,12 +138,12 @@
     }
 
     allElementsInSomeDiagonal = function() {
-        if ( (tabuleiro[0] == '&#9733;' && tabuleiro[4] == '&#9733;' && tabuleiro[8] == '&#9733;') ||
-                (tabuleiro[2] == '&#9733;' && tabuleiro[4] == '&#9733;' && tabuleiro[6] == '&#9733;')) {
+        if ( (tabuleiro[0] == jogadorAtual.nome && tabuleiro[4] == jogadorAtual.nome && tabuleiro[8] == jogadorAtual.nome) ||
+                (tabuleiro[2] == jogadorAtual.nome && tabuleiro[4] == jogadorAtual.nome && tabuleiro[6] == jogadorAtual.nome)) {
                 alert (jogador1.nome + ' Venceu!');
             reset();
-        } else if ( (tabuleiro[0] == '&#9734;' && tabuleiro[4] == '&#9734;' && tabuleiro[8] == '&#9734;') ||
-                    (tabuleiro[2] == '&#9734;' && tabuleiro[4] == '&#9734;' && tabuleiro[6] == '&#9734;') ) {
+        } else if ( (tabuleiro[0] == jogadorAtual.nome && tabuleiro[4] == jogadorAtual.nome && tabuleiro[8] == jogadorAtual.nome) ||
+                    (tabuleiro[2] == jogadorAtual.nome && tabuleiro[4] == jogadorAtual.nome && tabuleiro[6] == jogadorAtual.nome) ) {
                 alert (jogador2.nome + ' Venceu!');
             reset();
         } 
